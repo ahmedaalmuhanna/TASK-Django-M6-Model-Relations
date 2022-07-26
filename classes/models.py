@@ -39,21 +39,21 @@
 
 class Assignment():
     def __init__(self,name,link):
-        super().__init__(name,link)
+        self.name = name
+        self.link = link
 
 
 class Slide(Assignment):
-    def __init__(self,name,link,Lec_name):
-        super().__init__(Lec_name)
-        self.name = name
-        self.link = link
+    def __init__(self,name,link):
+        super().__init__(name,link)
+
 
 
 
 
 class Lecture(Slide):
-     def __init__(self,Lec_name, slide_name, slide_link):
-         super().__init__(slide_name, slide_link)
+     def __init__(self,Lec_name, name, link):
+         super().__init__(name, link)
          self.Lec_name = Lec_name
          
 
@@ -68,4 +68,3 @@ class Course(Tag, Lecture):
         super().__init__(tag_name) # INH form Tag class
         super().__init__(Lec_name) # INH form Lecture class
         self.corse_name = corse_name
-
